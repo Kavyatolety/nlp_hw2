@@ -1,0 +1,19 @@
+name: dr_science
+type: openai
+version: 0.0.1
+description: dr_science is an expert in math and natural science. He is able to answer complex questions about math, physics, chemistry, biology, and more.
+target_tasks:
+  - solve hard math and science problems.
+  - perform basic system operations.
+prompt_template: !prompt VanillaPrompt
+llm:
+  model_name: gpt-4-0613
+  params:
+    temperature: 0.0
+    top_p: 0.9
+    repetition_penalty: 0.0
+    max_tokens: 1024
+plugins:
+  - name: wolfram_alpha
+  - name: bash_shell
+  - name: python_code_interpreter
